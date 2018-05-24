@@ -1,0 +1,25 @@
+<div class="container"><br/>
+  <h1 class="text-danger">{{myWeather.cityName}}</h1><br/>
+  <h2>{{myWeather.temp}}&deg;</h2>
+  <div class="img"><br/>
+    <img src="http://tiny.cc/88{{myWeather.icon}}" height="256" width="256"><br/>
+  </div>
+  <h3 class="font-weight-bold">{{myWeather.weatherKind}}</h3><br/>
+  <h4>Max: {{myWeather.tempMax}}&deg;</h4>
+  <h4>Min: {{myWeather.tempMin}}&deg;</h4>
+  <h4>Humidity: {{myWeather.humidity}}%;</h4>
+  <h4>Pressure: {{myWeather.pressure}} hpa;</h4>
+  <h4>Wind Speed: {{myWeather.windspeed}} mph;</h4><br/>
+  </div>
+  <div class="row">
+      <div class="mx-auto">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm"> 
+          <div class="input-group">
+            <input type="text" autocomplete="off" ngModel name="city" required class="form-control" placeholder="Enter a city name">
+            <span class="input-group-btn">
+              <button class="btn btn-success" type="submit">Go!</button>
+            </span>
+          </div>
+          </form>
+        </div>
+  </div>

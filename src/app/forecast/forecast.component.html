@@ -1,0 +1,31 @@
+<br/>
+<div class="row">
+  <div class="mx-auto">
+    <form [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <input type="text" formControlName="forecastCity" autocomplete="off" name="city" required class="form-control" placeholder="Enter a city name">
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="submit">Go!</button>
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<div class="container mx-auto position-relative">
+  <div class="row">
+    <div class="day col-sm-4" *ngFor="let day of cityForecast">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h2>{{day.day | date: 'MMMM d'}}</h2>
+      <div class="icon">
+        <img id="i" src="http://tiny.cc/88{{day.icon}}">
+      </div>
+      <br/>
+      <div class="temp d-flex justify-content-center">
+        <h5>Max: {{day.tempMax}}&deg;</h5>&nbsp;&nbsp;&nbsp;
+        <h5>Min: {{day.tempMin}}&deg;</h5>
+      </div>
+    </div>
+  </div>
